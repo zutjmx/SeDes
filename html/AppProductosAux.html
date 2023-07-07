@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>SeDes</title>
+    <script>
+      // Crear un array de objetos que representan los productos
+      var productos = [
+        {
+          ID: 1539974384,
+          Name: "Herman Group",
+          Price: 1924549424.0,
+        },
+        {
+          ID: 605773552,
+          Name: "Adams LLC",
+          Price: 524613467.0,
+        },
+        {
+          ID: 1175635057,
+          Name: "Kihn Group",
+          Price: 600620344.0,
+        },
+        {
+          ID: 1197232294,
+          Name: "Klein, Tillman and Bahringer",
+          Price: 1134232568.0,
+        },
+      ];
+
+      // Crear una función que reciba un array de productos y devuelva una lista HTML
+      function generarLista(productos) {
+        // Crear una variable para almacenar el código HTML de la lista
+        var listaHTML = "<ul>";
+
+        // Recorrer el array de productos con un bucle for
+        for (var i = 0; i < productos.length; i++) {
+          // Obtener el producto actual
+          var producto = productos[i];
+
+          // Añadir un elemento li con el nombre, el precio y el stock del producto
+          listaHTML +=
+            "<li>" +
+            producto.ID +
+            " - " +
+            producto.Name +
+            " - $" +
+            producto.Price
+            "</li>";
+        }
+
+        // Cerrar la etiqueta ul
+        listaHTML += "</ul>";
+
+        // Devolver el código HTML de la lista
+        return listaHTML;
+      }
+
+      // Llamar a la función con el array de productos y mostrar el resultado en la consola
+      let lista = generarLista(productos)
+      console.log(lista);
+      document.write(lista);
+    </script>
+  </head>
+  <body></body>
+</html>
