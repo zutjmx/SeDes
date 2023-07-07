@@ -10,6 +10,10 @@ DoDeserialization(json);
 Console.WriteLine("Usando método DoDeserializationUFO");
 DoDeserializationUFO(json);
 
+Console.WriteLine("Usando método SerializaProductos");
+var jsonProductos = SerializaProductos();
+Console.WriteLine(jsonProductos);
+
 // Serialize a Rocket array to JSON string
 static string DoSerialization() {
     Rocket[] rockets = {
@@ -20,6 +24,13 @@ static string DoSerialization() {
         new Rocket{ ID = 3, Builder = "Roscosmos", Target = "Soyuz TM-17", Speed=7500}
     };
     var json = JsonConvert.SerializeObject(rockets);
+    return json;
+}
+
+static string SerializaProductos() {
+    ProductosUtil productosUtil = new ProductosUtil();
+    List<Product> products = productosUtil.GenerarProductos();
+    var json = JsonConvert.SerializeObject(products);
     return json;
 }
 
