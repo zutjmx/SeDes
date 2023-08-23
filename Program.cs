@@ -3,16 +3,20 @@
 using Newtonsoft.Json;
 using SeDes;
 
+Console.WriteLine("Usando método DoDeserialization");
 var json = DoSerialization();
 Console.WriteLine(json);
-Console.WriteLine("================");
 DoDeserialization(json);
+Console.WriteLine("================");
+
 Console.WriteLine("Usando método DoDeserializationUFO");
 DoDeserializationUFO(json);
+Console.WriteLine("================");
 
 Console.WriteLine("Usando método SerializaProductos");
 var jsonProductos = SerializaProductos();
 Console.WriteLine(jsonProductos);
+Console.WriteLine("================");
 
 // Serialize a Rocket array to JSON string
 static string DoSerialization() {
